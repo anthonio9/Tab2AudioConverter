@@ -1,0 +1,17 @@
+= Tab To Audio Converter
+
+== Tab Splitter
+
+To run tab splitter, install required packages with `pip`
+
+[source, bash]
+----
+pip install -r TabSplitter/requirements.txt
+----
+
+and run the `tab_splitter.py` script aiming it at the GuitarPro tabulature file you wish to separate into single string tracks. The software supports *gp3*, *gp4* and *gp5* files.
+
+[source, bash]
+----
+python TabSplitter/tab_splitter.py path/to/tabulature.gp5
+----
