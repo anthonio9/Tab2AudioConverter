@@ -13,5 +13,18 @@ and run the `tab_splitter.py` script aiming it at the GuitarPro tabulature file 
 
 [source, bash]
 ----
-python TabSplitter/tab_splitter.py path/to/tabulature.gp5
+# destination same as source
+python TabSplitter/tab_splitter.py --src path/to/tabulature.gp5
+
+# destination different from source 
+python TabSplitter/tab_splitter.py --src path/to/tabulature.gp5 --dst path/to/dest_directory
 ----
+
+== GuitarPro To MIDI
+
+Project with which it's possible to convert GuitarPro tabs to MIDI files.
+https://github.com/alexsteb/GuitarPro-to-Midi[GuitarPro-to-Midi]
+
+== Reaper Automation
+
+`ReaperAutomation` directory is where the reaper template sits and the autiomation scripts (not yet ready).

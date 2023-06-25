@@ -4,8 +4,12 @@ from pathlib import Path
 import splitter_toolset as split
 
 
-def main(source):
+def main(source, dest):
     gp_path = Path(source)
+    dst_path = gp_path.parent
+
+    if dest is not None:
+        dst_path = Path(dest)
 
     try:
         tab = guitarpro.parse(gp_path)
@@ -19,7 +23,7 @@ def main(source):
             .replace(' ', '_').replace('.', '_')
 
         # create a directory for all new tabs
-        gp_tab_dir = Path(gp_path.parent, gp_path_stem)
+        gp_tab_dir = Path(dst_path, gp_path_stem)
         gp_tab_dir.mkdir(parents=True, exist_ok=True)
 
         for track in tab.tracks:
@@ -56,9 +60,15 @@ if __name__ == '__main__':
      from a given guitar pro file."""
 
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument('source',
+    parser.add_argument('--src',
                         metavar='SOURCE',
+                        dest='source',
                         help='path to the source tabs folder')
+    parser.add_argument('--dst',
+                        metavar='DESTINATION',
+                        dest='dest',
+                        help='path to the destination tabs folder')
     args = parser.parse_args()
+
     kwargs = dict(args._get_kwargs())
     main(**kwargs)
