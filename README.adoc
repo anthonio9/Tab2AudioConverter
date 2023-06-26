@@ -28,3 +28,12 @@ https://github.com/alexsteb/GuitarPro-to-Midi[GuitarPro-to-Midi]
 == Reaper Automation
 
 `ReaperAutomation` directory is where the reaper template sits and the autiomation scripts (not yet ready).
+
+=== Reaper Setup
+
+To setup Reaper for automation:
+
+* Download https://www.reaper.fm/download.php[Reaper]
+* Install Reapack[https://reapack.com/]
+* Install JS_ReaScriptAPI extension with Reapack
+* load the `midi_window.lua` script into Reaper as an Action.
